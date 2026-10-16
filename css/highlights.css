@@ -1,0 +1,30 @@
+#highlights {
+    display: flex;
+    text-shadow: 3px 1px 4px maroon;
+    font-size: 48px;
+    align-self: stretch;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-weight: 560;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    min-height: 16ch;
+    border-radius: 15px 15px 15px 15px;
+}
+
+#highlights-border {
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 10px 15px 18px rgba(0, 0, 0);
+    border-left: 8px solid grey;
+    border-top: 8px solid grey;
+    padding: 0;
+    font-size: 88px;
+    margin: 1ch 2ch;
+}
+
+#highlights-back {
+    background-color: whitesmoke;
+    border-bottom: 8px inset grey;
+}

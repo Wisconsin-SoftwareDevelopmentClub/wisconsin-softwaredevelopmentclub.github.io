@@ -1,0 +1,111 @@
+#news-area {
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-flex;
+    overflow-x: auto;
+    width: 100%;
+    gap: 1cm;
+    padding: 2cm;
+}
+
+#news-tab {
+    border: 2px solid hsl(var(--clr-accent));
+    border-bottom-style: none;
+    border-radius: 10px 10px 0 0;
+    opacity: 0.4;
+    position: fixed;
+    bottom: 0;
+    left: 1ch;
+    padding: 0.5ch 1.5ch;
+}
+
+#news-tab:hover {
+    opacity: 1;
+}
+
+.article {
+    display: flex;
+    flex-direction: column;
+    border: 4px solid hsl(var(--clr-accent));
+    background-color: hsl(var(--clr-white));
+    flex: 1 0 auto;
+    width: 10cm;
+    max-width: 10cm;
+    max-height: 12cm;
+    overflow-y: auto;
+}
+
+.article.old {
+    opacity: 0.7;
+}
+
+.article p {
+    font-size: var(--fs-200);
+    margin: 1ch 2ch;
+}
+
+.article h1 {
+    margin: 0;
+    padding: 1ch 0;
+    font-size: var(--fs-300);
+    text-align: center;
+    border-bottom: 2px darkslategray solid;
+    background-color:rgba(211, 211, 211, 0.836);
+}
+
+.article h2 {
+    background-color: rgba(155, 142, 142, 0.31);
+    text-align: center;
+    padding: 0.5ch 0;
+    font-weight: normal;
+}
+
+.section {
+    border: 2px solid slategrey;
+    margin: 2ch;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.37);
+}
+
+.section-head {
+    border-radius: 30px 30px 0 0;
+}
+
+.article a {
+    color: hsl(var(--clr-red));
+    font-weight: bold;
+}
+
+.article a:hover {
+    color: hsl(var(--clr-dark));
+}
+
+.urgent {
+    border-color: hsl(var(--clr-red));
+}
+
+.urgent h2 {
+    background-color: hsl(var(--clr-red) / 0.3);
+    font-weight: bold;
+}
+
+.more-news {
+    position: sticky;
+    z-index: 20;
+    right: 0;
+    border: 4px solid hsl(var(--clr-accent));
+    border-radius: 72px;
+    background-color: hsl(var(--clr-white));
+    color: hsl(var(--clr-red));
+    font-size: var(--fs-400);
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6;
+}
+
+.more-news:hover {
+    background-color: hsl(var(--clr-accent));
+    border-color: hsl(var(--clr-white));
+}

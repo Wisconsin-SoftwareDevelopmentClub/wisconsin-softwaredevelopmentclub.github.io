@@ -1,0 +1,181 @@
+<!-- SDC-Site -->
+<!-- Created by Anthony Segedi, VP of Engineering Spring 2022 -->
+<!-- For whoever maintains this, check out the news area, which has -->
+<!-- appropriate documentation on site: #News_Area -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Standard meta -->
+    <meta charset="utf-8" lang="en-us" />
+    <link rel="icon" type="image/png" href="images/sdc-icon.png" />
+    <title>SDC</title>
+
+    <!-- meta tags for LinkedIn preview -->
+    <meta property="og:url" content="https://segedi-uw.github.io/SDC-Site/index.html/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Software Development Club Site">
+    <meta property="og:description"
+        content='This is a brand-new website for the Software Development Club that I built using html, CSS, and JavaScript to replace the expired site. GitHub hosts it free of charge provided we do not use it commercially.'>
+    <meta property="og:image" content="https://segedi-uw.github.io/SDC-Site/images/sdc-icon.png">
+    <meta name="author" content="Anthony Segedi">
+
+    <!-- Scripts -->
+    <script src="scripts/highlight-script.js" defer></script>
+    <script src="scripts/header-footer.js" defer></script>
+    <script src="scripts/date-checker.js" defer></script>
+    <script src="scripts/old-news.js" defer></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/highlights.css" />
+    <link rel="stylesheet" href="css/index.css" />
+</head>
+
+<body>
+    <!-- #banner and #critical are inserted here, defined in header-footer.js -->
+    <script src='https://cdn.jsdelivr.net/npm/@widgetbot/crate@3' async defer>
+        new Crate({
+            server: '935966476261785620', // Software Development Club
+            channel: '938520338034208808' // #announcements
+        })
+    </script>
+    <div id="highlights-border">
+        <div id="highlights">
+            <!-- inserted via js, requires highlight-script.js -->
+        </div>
+    </div>
+    <a href="#news-title" id="news-tab" class="bg-white text-dark fs-300">News</a>
+    <!-- The news area is a place to put SDC updates -->
+    <!-- Currently can add articles - may be expanded later -->
+    <h2 id="news-title" class="bg-dark text-white ctr"
+        style="font-size: var(--fs-500); font-weight: bold; padding: 2cm 0 1cm 0;">
+        SDC News
+    </h2>
+    <div id="news-bg">
+        <!-- **** NEWS_AREA **** -->
+        <!-- All news blocks should be put in a div with article class -->
+        <!-- The article has the following tags included in syntax: -->
+        <!-- h1: title -->
+        <!-- h2: subheader -->
+        <!-- p: text -->
+        <!-- div class=section: Adds a border section (see below) -->
+
+        <!-- Section API -->
+        <!-- div class=section urgent: Highlights border section red -->
+        <!-- h2 class=section-head: Used for the section title -->
+
+        <!-- BUGS: There may be a bug where the news display does some odd things, but I have -->
+        <!-- not been able to reproduce it as of 4/13/2022. Consider checking for errors on different -->
+        <!-- screen sizes -->
+
+        <!-- ********* Overdue API ******** -->
+        <!-- I have also included an 'Old' API that reads the date provided -->
+        <!-- Parsing is done via the date-checker.js script -->
+        <!-- and gives closed articles or forms a alt appearance after the date -->
+        <!-- Check out 'old-news.js' for display code. -->
+        <!-- To use it, simply include a 'due' attribute in the article div with the -->
+        <!-- format 'yyyy-mm-dd' -->
+
+        <!-- **** EDIT the #news-area div **** -->
+        <div id="news-area" style="background: linear-gradient(hsl(var(--clr-dark)), hsl(var(--clr-black)));">
+            <div class="article" due="2022-5-5">
+                <h1>Project Presentations <span style="text-decoration: line-through; font-weight: 200;">5/1</span> 5/4
+                </h1>
+                <p>
+                    Project Presentations are upon us! It is time to celebrate all your hard work
+                    this semester! There will be donuts for those who come, regardless on if your team
+                    finished by today or not.
+                </p>
+                <p style="text-align: center;">
+                    Congrats to everyone that finished!
+                </p>
+            </div>
+            <div class="article" due="2022-2-21">
+                <h1>First Project Meeting 2/20</h1>
+                <p>
+                    Our first project meeting is Sunday, Feb. 20 at 2:00 p.m. in CS 1221! Remember to come with 5
+                    project ideas with your group!
+                </p>
+            </div>
+            <div class="article" due="2022-2-13">
+                <h1>Project Registration</h1>
+                <p>
+                    Project Registration is now open! Checkout the new
+                    <a href="project.html">project page</a> for more information!
+                </p>
+                <div class="section urgent">
+                    <h2 class="section-head">Form due 2/12</h2>
+                    <p>
+                        The project form is due <strong>Saturday 2/12 at 11:59 p.m. CST!</strong>
+                    </p>
+                </div>
+            </div>
+            <div class="article" due="2022-2-5">
+                <h1>Meeting Preferences</h1>
+                <p>
+                    Hey all, we are polling for meeting times that accommodate the most people - please
+                    let us know what works for you on Wednesdays by filling out this <a
+                        href="https://docs.google.com/forms/d/e/1FAIpQLSde8NIBGgwRVc6S7iJ55v3s-bbh3IPbHRah_7KoKI0y14OSbg/viewform?usp=sf_link">google
+                        form.</a>
+                </p>
+                <div class="section urgent">
+                    <h2 class="section-head">Poll due 2/5</h2>
+                    <p>The form closes Saturday night (11:59) so be sure to fill it out by then!</p>
+                </div>
+            </div>
+            <div class="article">
+                <h1>
+                    First Meeting 2/3
+                </h1>
+                <p>
+                    Our first meeting! Much wow.
+                </p>
+                <div class="section">
+                    <h2 class="section-head">Synopsis</h2>
+                    <p>
+                        The kickoff went fantastic, thank you so much for
+                        everyone who braved the freezing weather to come!
+                        The notable details to know is that our next meeting will
+                        discuss the upcoming career fairs, and our first speaker series
+                        is this month from a senior software developer at Discord,
+                        Hitesh Sarabu!
+                    </p>
+                </div>
+            </div>
+            <div class="article">
+                <h1>Project Overhaul</h1>
+                <p>
+                    We have overhauled projects from last semester, and hope to do even
+                    more with them before our first meeting <s>2/13</s> 2/20! We are actively looking
+                    for input, which you can give by emailing one of the VP of Engineering
+                    (segedi@wisc.edu, or jsangha@wisc.edu),
+                    or filling out the appropriate section of the google form on the project
+                    GitHub that is released Friday 2/4.
+                </p>
+            </div>
+            <div class="article">
+                <h1>New Site!</h1>
+                <p>
+                    You are looking at it! This is our brand new website that
+                    has all the information you need for the club.
+                </p>
+                <p>
+                    This site has been made using nothing but plain html, css,
+                    and javascript. No special libraries needed! GitHub hosts it free
+                    of charge provided we don't use it commercially. The source code if
+                    you want to check it out can be found <a href="https://github.com/segedi-UW/SDC-Site">here!</a>
+                </p>
+                <p>
+                    If you are thinking to yourself that this is something you want to
+                    learn about, keep that in mind for Workshop polls!
+                </p>
+            </div>
+
+        </div>
+    </div>
+    <!-- #footer is injected by header-footer.js -->
+</body>
+
+</html>
