@@ -105,7 +105,8 @@ def render_regions(config, filename, current_page):
                     raise ValueError("Board imgURL must be a local path inside images/")
                 if not (ROOT / image_path).is_file():
                     raise ValueError(f"Board image does not exist: {image_path}")
-                image = f'<img src="{text(image_path)}" alt="Portrait of {name}" width="320" height="320" loading="lazy">'
+                image_alt = text(member.get("imgAlt", f"Portrait of {member['name']}"))
+                image = f'<img src="{text(image_path)}" alt="{image_alt}" width="320" height="320" loading="lazy">'
             contact = ""
             email = member.get("email", "")
             if member.get("isContact") and email:

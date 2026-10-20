@@ -1,6 +1,44 @@
 {
     "siteUrl": "https://wisconsin-softwaredevelopmentclub.github.io/",
-    "board": [],
+    "board": [
+        {
+            "name": "Marc",
+            "title": "President",
+            "imgURL": "images/board-placeholder.svg",
+            "imgAlt": "Headshot coming soon"
+        },
+        {
+            "name": "Christian",
+            "title": "VP of Engineering",
+            "imgURL": "images/christian.jpg"
+        },
+        {
+            "name": "Soham",
+            "title": "VP of Engineering",
+            "imgURL": "images/board-placeholder.svg",
+            "imgAlt": "Headshot coming soon"
+        },
+        {
+            "name": "Charvik",
+            "title": "VP of Engineering",
+            "imgURL": "images/charvik.png"
+        },
+        {
+            "name": "Hera",
+            "title": "VP of Finance",
+            "imgURL": "images/hera.png"
+        },
+        {
+            "name": "Connor",
+            "title": "VP of Internal Communications",
+            "imgURL": "images/connor.jpg"
+        },
+        {
+            "name": "Sana",
+            "title": "VP of External Communications",
+            "imgURL": "images/sana.png"
+        }
+    ],
     "semester": "Fall 2026",
     "discordLink": "https://discord.gg/kGssWKMjya",
     "projectLink": "https://github.com/SDC-Fall-2026/",

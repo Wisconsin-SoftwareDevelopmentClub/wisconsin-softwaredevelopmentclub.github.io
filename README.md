@@ -57,6 +57,8 @@ Add only confirmed current members. The optional board section appears automatic
 
 Put photos inside `images/`. Omit `imgURL` when no approved photo is available. An email appears only when `isContact` is `true` and `email` is present. Confirm that the member wants that address published. Set `isContact` to `false` or omit it to keep the email out of the generated page.
 
+Use `images/board-placeholder.svg` for a temporary generic avatar and set `imgAlt` to `Headshot coming soon`. Real photos default to `Portrait of [name]` unless `imgAlt` is supplied. The original Sana photo is sideways; `css/info.css` rotates it for display, so remove that rule when replacing it with an upright photo.
+
 ### Each semester
 
 - Update the semester, project destination, and board together.
@@ -65,7 +67,7 @@ Put photos inside `images/`. Omit `imgURL` when no approved photo is available. 
 - Clear expired announcements and remove former officers’ public contact details.
 - Add project showcases only when teams have supplied actual descriptions and links.
 
-The refreshed site starts with an empty board and no specific meeting schedule. Discord is the current source for onboarding, meeting details, and announcements. Historical announcements are preserved in Git history. Legacy image files are retained for reference but are not displayed as a current roster.
+The current board is maintained in `config.json`. Discord is the current source for onboarding, meeting details, and announcements. Historical announcements are preserved in Git history. Legacy image files are retained for reference but are not displayed as a current roster.
 
 ## Structure and design
 
