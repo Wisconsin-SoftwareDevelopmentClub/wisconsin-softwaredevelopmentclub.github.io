@@ -1,75 +1,111 @@
-# SDC-Site
+# Wisconsin Software Development Club website
 
-Hey there future maintainer! I have done my best to setup the framework for our website going forward.
-Maybe it gets scrapped, but if it does not hopefully you can refer to this in order to continue to
-improve it, or at the very least keep it updated with the latest info!
+The club’s public website is plain HTML and CSS, hosted on GitHub Pages. Visitors can learn about the club, explore the project GitHub, and join Discord. All essential content works without JavaScript, a configuration fetch, or a third-party widget.
 
-In addition to this README page, I have also added comments depicting what will be 
-in a given spot after script injections throughout the html in order to clarify 
-where some of the elements are coming from.
+## Preview locally
 
-# Configuration
+Use Python 3.10 or newer. There are no packages to install.
 
-The site is configurable without touching any of the html! Luckily for you I put
-in a little bit of extra effort to make a configuration file, 'config.json'. This 
-file has some clear self-explanatory configurations, but since JSON 
-does not have comments I will list them here.
+```sh
+python3 -m http.server 8000 --bind 127.0.0.1
+```
 
-* The Board array is made up of 'Board Member' objects that can have
-the following data:
-    * name
-    * title (position on the board)
-    * email
-    * imgURL (uses absolute path)
-    * isContact (whether to list this member in our contacts section in the footer)
-* discordLink
-* projectLink (project GitHub or whatever platform you use). Changing from
-GitHub will require some decent reworks UI wise if that is wanted
-* LinkedInLink (note the capital 'I')
-* isShowCriticalInfo allows toggling of the critical section underneath the header
-* criticalInfo is the text that is displayed by the critical section when enabled
+Open <http://127.0.0.1:8000>. Stop the server with `Ctrl+C`.
 
-You can add your own configurations to the config file if you feel like it is
-warranted. Access to the vars / states is easy using the fetch() API (see
-header-footer.js for an example of that). Please note that functions can 
-override if they are named the same thing and multiple scripts are active in
-the same file, i.e. rename the function that is called by the last then() 
-function to something unique.
+## Update club information
 
-# Technologies
+1. Edit `config.json` with information confirmed by the current club leadership.
+2. Run the content updater and checks:
 
-Everything is done using plain ol' HTML, CSS, and JS. No special libraries etc.
-That may be a downside to some, but if you are not familiar with the tech
-then it is a plus.
+   ```sh
+   python3 scripts/update_site.py
+   python3 scripts/check_site.py
+   python3 -m unittest discover -s tests -v
+   ```
 
-# Layout
+3. Preview the affected pages on a phone-sized and desktop-sized viewport.
+4. Commit `config.json` **and the updated HTML** together. The hosting service serves those HTML files directly; it does not run the updater.
 
-index.html is our homepage (and is purposefully named as such according to HTML standards). The homepage has some 'og' meta tags that are for SEO, primarily with
-LinkedIn. At the bottom of index.html is where all the articles are, which are
-mostly announcements on various parts of the club.
+The updater rewrites only regions between `<!-- config:NAME -->` and `<!-- /config:NAME -->`. Edit shared content in `scripts/update_site.py` and club details in `config.json`, rather than hand-editing generated regions. Edit other page copy directly in HTML.
 
-Also on the homepage are a number of scripts that you should be aware of:
+| Config field | Purpose |
+| --- | --- |
+| `siteUrl` | Full public site URL, including any project path. Generates canonical and social image URLs. |
+| `semester` | Manually maintained semester label on Home and the optional board section. |
+| `discordLink` | Official joining destination, used in all calls to action and the footer. |
+| `projectLink` | Official project GitHub organization or repository. |
+| `linkedInLink` | Official LinkedIn destination. Keep the lowercase spelling. |
+| `meeting` | Confirmed meeting schedule and location as plain text, or `null` to direct people to Discord. |
+| `announcement` | Short plain-text notice shown across the site, or `null` to hide it. Remove expired announcements manually. |
+| `board` | Current board entries. An empty array hides the whole board section. |
 
-* highlight-script.js
-* header-footer.js
-* date-checker.js
-* old-news.js
+All community links and `siteUrl` must use HTTPS. Text values are escaped when rendered; HTML in config is displayed as text. The updater validates pages before writing, and a failed update leaves the last generated site available.
 
-The 'highlight-script.js' script is specific to the homepage - it plays the carousel with
-opacity transitions.
+### Replace the board
 
-The 'header-footer.js' script is on **all** pages, and should be added to all
-new pages since it injects the respective header and footer into the document 
-so we do not have to copy paste those pieces on every page (yay).
+Add only confirmed current members. The optional board section appears automatically on About. A member needs `name` and `title`; a photo and public email are optional. Example structure:
 
-The 'date-checker.js' script is for time sensitive articles (see #Articles). It
-reads all HTML elements on the page with the 'due' attribute, parsing the string
-contained by the attribute and comparing that with the current time to see if
-it is outdated or not. If it is outdated, some special formatting is applied
-(lower opacity, redness and a CLOSED banner appears as of this writing).
-The due format is '**yyyy-mm-dd**'. This and the article format is described in
-comments where they are used as well.
+```json
+{
+    "name": "Current member name",
+    "title": "Current role",
+    "imgURL": "images/current-member.jpg",
+    "email": "public-contact@example.com",
+    "isContact": true
+}
+```
 
-The 'old-news.js' script deals with overflown news - a bar appears when there is more
-news to take in than space on the screen. Clicking the button shows the rest of the
-off-screen articles.
+Put photos inside `images/`. Omit `imgURL` when no approved photo is available. An email appears only when `isContact` is `true` and `email` is present. Confirm that the member wants that address published. Set `isContact` to `false` or omit it to keep the email out of the generated page.
+
+### Each semester
+
+- Update the semester, project destination, and board together.
+- Confirm that the Discord invite and LinkedIn page still work.
+- Publish meeting details only when confirmed; otherwise keep `meeting` as `null`.
+- Clear expired announcements and remove former officers’ public contact details.
+- Add project showcases only when teams have supplied actual descriptions and links.
+
+The refreshed site starts with an empty board and no specific meeting schedule. Discord is the current source for onboarding, meeting details, and announcements. Historical announcements are preserved in Git history. Legacy image files are retained for reference but are not displayed as a current roster.
+
+## Structure and design
+
+| Location | Responsibility |
+| --- | --- |
+| `index.html` | Club introduction, activities, and joining steps. |
+| `project.html` | Project orientation and GitHub links. |
+| `info.html` | Club purpose, optional current board, and contact. |
+| `css/style.css` | Shared colors, typography, navigation, controls, sections, and footer. |
+| `css/index.css`, `css/project.css`, `css/info.css` | Page-specific layouts. |
+| `scripts/update_site.py` | Generates shared navigation, footer, metadata, and config-driven content. |
+| `scripts/check_site.py`, `tests/` | Static checks and content updater regression tests. |
+
+Change the shared design tokens at the top of `css/style.css` to update colors or typography. Preserve visible keyboard focus, readable contrast, reduced-motion preferences, and the existing three page URLs. Navigation stays visible on mobile without a menu script.
+
+Use meaningful headings, image descriptions, and link text when adding content. The numbered lists intentionally include `role="list"` so assistive technology retains list semantics when CSS hides the default markers.
+
+## Checks and publishing
+
+`check_site.py` checks config synchronization, local page and image links, fragment targets, document language, viewport metadata, one main heading and landmark per page, heading order, image alternatives, the skip link, and active navigation. It does not contact external services or perform a full accessibility audit.
+
+The tests cover configuration changes, optional board contacts, safe text rendering, absent meeting details, and broken generation markers. GitHub Actions runs both checks on pushes and pull requests. The workflow uses the versions shown in the official [checkout](https://github.com/actions/checkout) and [setup-python](https://github.com/actions/setup-python) usage examples.
+
+Before publishing, preview Home, Projects, and About at approximately 320px, 390px, 768px, 1024px, and 1440px wide. Check keyboard navigation, the skip link, community destinations, and image loading. There should be no horizontal page scrolling.
+
+Keep the existing GitHub Pages configuration serving the repository’s root. There is no build or runtime script to deploy. `siteUrl` currently targets `https://wisconsin-softwaredevelopmentclub.github.io/`; if this checkout is published from a personal fork, project path, or custom domain, set it to that actual address and regenerate the HTML first. The checks workflow validates changes; it does not configure Pages or publish the site.
+
+## Commit categories
+
+Use `type(area): concise description`, grouping related changes into small commits:
+
+| Category | Use for |
+| --- | --- |
+| `content(club)` | Roster, semester, links, meeting details, or page copy. |
+| `feat(design)` | New or substantially changed layouts and visual features. |
+| `fix(a11y)` | Keyboard, assistive technology, contrast, or motion fixes. |
+| `fix(site)` | Broken links, layout defects, or generated content bugs. |
+| `refactor(content)` | Content generation or organization changes. |
+| `test(site)` | Checks and regression coverage. |
+| `chore(ci)` | Automated workflow maintenance. |
+| `docs(maintenance)` | Instructions for future maintainers. |
+
+Include why the change was needed and how it was checked in the commit body when that context would help the next maintainer. Keep generated HTML in the same commit as its configuration or generator change.
