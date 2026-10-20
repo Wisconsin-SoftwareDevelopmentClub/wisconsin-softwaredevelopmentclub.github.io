@@ -1,181 +1,147 @@
-<!-- SDC-Site -->
-<!-- Created by Anthony Segedi, VP of Engineering Spring 2022 -->
-<!-- For whoever maintains this, check out the news area, which has -->
-<!-- appropriate documentation on site: #News_Area -->
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <!-- Standard meta -->
-    <meta charset="utf-8" lang="en-us" />
-    <link rel="icon" type="image/png" href="images/sdc-icon.png" />
-    <title>SDC</title>
-
-    <!-- meta tags for LinkedIn preview -->
-    <meta property="og:url" content="https://segedi-uw.github.io/SDC-Site/index.html/">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wisconsin SDC | Build software. Find your people.</title>
+    <meta name="description" content="Build projects, learn practical development skills, and meet other builders at the Wisconsin Software Development Club at UW–Madison. Join us on Discord.">
+    <meta name="theme-color" content="#b51d2c">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Software Development Club Site">
-    <meta property="og:description"
-        content='This is a brand-new website for the Software Development Club that I built using html, CSS, and JavaScript to replace the expired site. GitHub hosts it free of charge provided we do not use it commercially.'>
-    <meta property="og:image" content="https://segedi-uw.github.io/SDC-Site/images/sdc-icon.png">
-    <meta name="author" content="Anthony Segedi">
-
-    <!-- Scripts -->
-    <script src="scripts/highlight-script.js" defer></script>
-    <script src="scripts/header-footer.js" defer></script>
-    <script src="scripts/date-checker.js" defer></script>
-    <script src="scripts/old-news.js" defer></script>
-
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/highlights.css" />
-    <link rel="stylesheet" href="css/index.css" />
+    <meta property="og:title" content="Wisconsin Software Development Club">
+    <meta property="og:description" content="Build projects. Learn together. Find your people at UW–Madison.">
+<!-- config:metadata -->
+    <link rel="canonical" href="https://wisconsin-softwaredevelopmentclub.github.io/">
+    <meta property="og:url" content="https://wisconsin-softwaredevelopmentclub.github.io/">
+    <meta property="og:image" content="https://wisconsin-softwaredevelopmentclub.github.io/images/sdc-icon.png">
+    <meta property="og:image:alt" content="Wisconsin Software Development Club logo">
+<!-- /config:metadata -->
+    <link rel="icon" type="image/png" href="images/sdc-icon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
-
 <body>
-    <!-- #banner and #critical are inserted here, defined in header-footer.js -->
-    <script src='https://cdn.jsdelivr.net/npm/@widgetbot/crate@3' async defer>
-        new Crate({
-            server: '935966476261785620', // Software Development Club
-            channel: '938520338034208808' // #announcements
-        })
-    </script>
-    <div id="highlights-border">
-        <div id="highlights">
-            <!-- inserted via js, requires highlight-script.js -->
+    <a class="skip-link" href="#main">Skip to content</a>
+<!-- config:header -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="index.html" aria-label="Wisconsin Software Development Club home">
+                <img src="images/sdc-icon.png" width="48" height="48" alt="">
+                <span class="brand-name">SDC<span class="brand-place">Wisconsin</span></span>
+            </a>
+            <nav aria-label="Main navigation">
+                <div class="nav-links">
+                    <a href="index.html" aria-current="page">Home</a>
+                    <a href="project.html">Projects</a>
+                    <a href="info.html">About</a>
+                </div>
+                <a class="button button-small" href="https://discord.gg/kGssWKMjya">Join Discord <span aria-hidden="true">↗</span></a>
+            </nav>
         </div>
-    </div>
-    <a href="#news-title" id="news-tab" class="bg-white text-dark fs-300">News</a>
-    <!-- The news area is a place to put SDC updates -->
-    <!-- Currently can add articles - may be expanded later -->
-    <h2 id="news-title" class="bg-dark text-white ctr"
-        style="font-size: var(--fs-500); font-weight: bold; padding: 2cm 0 1cm 0;">
-        SDC News
-    </h2>
-    <div id="news-bg">
-        <!-- **** NEWS_AREA **** -->
-        <!-- All news blocks should be put in a div with article class -->
-        <!-- The article has the following tags included in syntax: -->
-        <!-- h1: title -->
-        <!-- h2: subheader -->
-        <!-- p: text -->
-        <!-- div class=section: Adds a border section (see below) -->
+    </header>
+<!-- /config:header -->
+<!-- config:announcement -->
 
-        <!-- Section API -->
-        <!-- div class=section urgent: Highlights border section red -->
-        <!-- h2 class=section-head: Used for the section title -->
-
-        <!-- BUGS: There may be a bug where the news display does some odd things, but I have -->
-        <!-- not been able to reproduce it as of 4/13/2022. Consider checking for errors on different -->
-        <!-- screen sizes -->
-
-        <!-- ********* Overdue API ******** -->
-        <!-- I have also included an 'Old' API that reads the date provided -->
-        <!-- Parsing is done via the date-checker.js script -->
-        <!-- and gives closed articles or forms a alt appearance after the date -->
-        <!-- Check out 'old-news.js' for display code. -->
-        <!-- To use it, simply include a 'due' attribute in the article div with the -->
-        <!-- format 'yyyy-mm-dd' -->
-
-        <!-- **** EDIT the #news-area div **** -->
-        <div id="news-area" style="background: linear-gradient(hsl(var(--clr-dark)), hsl(var(--clr-black)));">
-            <div class="article" due="2022-5-5">
-                <h1>Project Presentations <span style="text-decoration: line-through; font-weight: 200;">5/1</span> 5/4
-                </h1>
-                <p>
-                    Project Presentations are upon us! It is time to celebrate all your hard work
-                    this semester! There will be donuts for those who come, regardless on if your team
-                    finished by today or not.
-                </p>
-                <p style="text-align: center;">
-                    Congrats to everyone that finished!
-                </p>
-            </div>
-            <div class="article" due="2022-2-21">
-                <h1>First Project Meeting 2/20</h1>
-                <p>
-                    Our first project meeting is Sunday, Feb. 20 at 2:00 p.m. in CS 1221! Remember to come with 5
-                    project ideas with your group!
-                </p>
-            </div>
-            <div class="article" due="2022-2-13">
-                <h1>Project Registration</h1>
-                <p>
-                    Project Registration is now open! Checkout the new
-                    <a href="project.html">project page</a> for more information!
-                </p>
-                <div class="section urgent">
-                    <h2 class="section-head">Form due 2/12</h2>
-                    <p>
-                        The project form is due <strong>Saturday 2/12 at 11:59 p.m. CST!</strong>
-                    </p>
+<!-- /config:announcement -->
+    <main id="main" tabindex="-1">
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> University of Wisconsin–Madison</p>
+                    <h1 id="hero-title">Build something.<br><span>Find your people.</span></h1>
+                    <p class="hero-description">Software is better together. Turn ideas into projects, learn beyond the classroom, and meet people who love to build.</p>
+                    <div class="button-group">
+<!-- config:join -->
+                <a class="button" href="https://discord.gg/kGssWKMjya">Join our Discord <span aria-hidden="true">↗</span></a>
+<!-- /config:join -->
+                        <a class="text-link" href="project.html">Explore projects <span aria-hidden="true">→</span></a>
+                    </div>
+                    <div class="hero-caption">
+<!-- config:semester -->
+                <span class="semester-label">Fall 2026</span>
+<!-- /config:semester -->
+                        <span>Ideas welcome. Curiosity encouraged.</span>
+                    </div>
+                </div>
+                <div class="workspace" aria-label="Our approach: bring an idea, build with a team, and share what you learned">
+                    <div class="workspace-heading"><span class="workspace-mark" aria-hidden="true">✳</span><span>A little curiosity.<br>A lot of possibility.</span></div>
+                    <div class="workspace-sheet">
+                        <div class="sheet-heading"><span>The development loop</span><span aria-hidden="true">↙</span></div>
+                        <ol class="build-loop" role="list">
+                            <li><span class="step-number">01</span><span>Bring an idea.<small>Start with “what if?”</small></span><span class="loop-symbol" aria-hidden="true">+</span></li>
+                            <li><span class="step-number">02</span><span>Build with a team.<small>Figure it out, together.</small></span><span class="loop-symbol" aria-hidden="true">⌘</span></li>
+                            <li><span class="step-number">03</span><span>Share what you learned.<small>Then make something else.</small></span><span class="loop-symbol" aria-hidden="true">↗</span></li>
+                        </ol>
+                        <div class="sheet-footer"><span aria-hidden="true">&lt;/&gt;</span><span>Less watching. More making.</span></div>
+                    </div>
                 </div>
             </div>
-            <div class="article" due="2022-2-5">
-                <h1>Meeting Preferences</h1>
-                <p>
-                    Hey all, we are polling for meeting times that accommodate the most people - please
-                    let us know what works for you on Wednesdays by filling out this <a
-                        href="https://docs.google.com/forms/d/e/1FAIpQLSde8NIBGgwRVc6S7iJ55v3s-bbh3IPbHRah_7KoKI0y14OSbg/viewform?usp=sf_link">google
-                        form.</a>
-                </p>
-                <div class="section urgent">
-                    <h2 class="section-head">Poll due 2/5</h2>
-                    <p>The form closes Saturday night (11:59) so be sure to fill it out by then!</p>
+        </section>
+        <section class="section opportunities" aria-labelledby="opportunities-title">
+            <div class="container">
+                <div class="section-heading">
+                    <div><p class="eyebrow">Beyond the classroom</p><h2 id="opportunities-title">Make room for<br>your next idea.</h2></div>
+                    <p>There’s more to development than a finished assignment. We make space for the skills, people, and experiments that come next.</p>
+                </div>
+                <div class="activity-grid">
+                    <article class="activity">
+                        <span class="activity-number" aria-hidden="true">01 /</span>
+                        <h3>Build real projects.</h3>
+                        <p>Collaborate with your peers, practice working on a team, and turn an idea into software you can share.</p>
+                        <a class="text-link" href="project.html">Find your starting point <span aria-hidden="true">→</span></a>
+                    </article>
+                    <article class="activity">
+                        <span class="activity-number" aria-hidden="true">02 /</span>
+                        <h3>Learn by doing.</h3>
+                        <p>Explore practical tools and development skills through workshops that take learning beyond the classroom.</p>
+                    </article>
+                    <article class="activity">
+                        <span class="activity-number" aria-hidden="true">03 /</span>
+                        <h3>Connect with people.</h3>
+                        <p>Meet fellow developers and hear from people in the industry about the work, paths, and possibilities ahead.</p>
+                    </article>
                 </div>
             </div>
-            <div class="article">
-                <h1>
-                    First Meeting 2/3
-                </h1>
-                <p>
-                    Our first meeting! Much wow.
-                </p>
-                <div class="section">
-                    <h2 class="section-head">Synopsis</h2>
-                    <p>
-                        The kickoff went fantastic, thank you so much for
-                        everyone who braved the freezing weather to come!
-                        The notable details to know is that our next meeting will
-                        discuss the upcoming career fairs, and our first speaker series
-                        is this month from a senior software developer at Discord,
-                        Hitesh Sarabu!
-                    </p>
+        </section>
+        <section class="section section-tinted" aria-labelledby="getting-involved-title">
+            <div class="container involvement-grid">
+                <div><p class="eyebrow">Your next step</p><h2 id="getting-involved-title">Start with<br>a hello.</h2><p class="section-intro">Our community starts in Discord. Come introduce yourself and see what’s happening.</p>
+<!-- config:join -->
+                <a class="button" href="https://discord.gg/kGssWKMjya">Join our Discord <span aria-hidden="true">↗</span></a>
+<!-- /config:join -->
                 </div>
+                <ol class="join-steps" role="list">
+                    <li><span class="step-number" aria-hidden="true">01</span><div><h3>Join the conversation.</h3><p>Join our Discord and introduce yourself to the club.</p></div></li>
+                    <li><span class="step-number" aria-hidden="true">02</span><div><h3>Find the next meetup.</h3>
+<!-- config:meeting -->
+                    <p>Find current meeting times, locations, and announcements in Discord.</p>
+<!-- /config:meeting -->
+                    </div></li>
+                    <li><span class="step-number" aria-hidden="true">03</span><div><h3>Make something together.</h3><p>Ask about projects and workshops, meet teammates, and find a place to put your curiosity to work.</p></div></li>
+                </ol>
             </div>
-            <div class="article">
-                <h1>Project Overhaul</h1>
-                <p>
-                    We have overhauled projects from last semester, and hope to do even
-                    more with them before our first meeting <s>2/13</s> 2/20! We are actively looking
-                    for input, which you can give by emailing one of the VP of Engineering
-                    (segedi@wisc.edu, or jsangha@wisc.edu),
-                    or filling out the appropriate section of the google form on the project
-                    GitHub that is released Friday 2/4.
-                </p>
+        </section>
+        <section class="closing-section" aria-labelledby="closing-title">
+            <div class="container closing-inner"><div><p class="eyebrow">Wisconsin Software Development Club</p><h2 id="closing-title">Your next project<br>starts with people.</h2></div><a class="text-link" href="info.html">Get to know the club <span aria-hidden="true">→</span></a></div>
+        </section>
+    </main>
+<!-- config:footer -->
+    <footer class="site-footer">
+        <div class="container footer-main">
+            <div>
+                <a class="footer-brand" href="index.html">Wisconsin SDC<span aria-hidden="true">.</span></a>
+                <p>A community for building software.<br>A place to find your people.</p>
             </div>
-            <div class="article">
-                <h1>New Site!</h1>
-                <p>
-                    You are looking at it! This is our brand new website that
-                    has all the information you need for the club.
-                </p>
-                <p>
-                    This site has been made using nothing but plain html, css,
-                    and javascript. No special libraries needed! GitHub hosts it free
-                    of charge provided we don't use it commercially. The source code if
-                    you want to check it out can be found <a href="https://github.com/segedi-UW/SDC-Site">here!</a>
-                </p>
-                <p>
-                    If you are thinking to yourself that this is something you want to
-                    learn about, keep that in mind for Workshop polls!
-                </p>
-            </div>
-
+            <nav class="footer-links" aria-label="Community links">
+                <a href="https://discord.gg/kGssWKMjya">Discord <span aria-hidden="true">↗</span></a>
+                <a href="https://github.com/SDC-Fall-2026/">GitHub <span aria-hidden="true">↗</span></a>
+                <a href="https://www.linkedin.com/in/wisconsin-software-development-club/">LinkedIn <span aria-hidden="true">↗</span></a>
+            </nav>
         </div>
-    </div>
-    <!-- #footer is injected by header-footer.js -->
+        <div class="container footer-bottom">
+            <span>Software Development Club · UW–Madison</span>
+            <span>Built together. Maintained by the club.</span>
+        </div>
+    </footer>
+<!-- /config:footer -->
 </body>
-
 </html>

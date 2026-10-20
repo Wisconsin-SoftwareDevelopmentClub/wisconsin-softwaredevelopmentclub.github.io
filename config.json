@@ -1,52 +1,48 @@
 {
+    "siteUrl": "https://wisconsin-softwaredevelopmentclub.github.io/",
     "board": [
         {
-            "name": "Victoria Zhang",
+            "name": "Marc",
             "title": "President",
-            "email": "vshang2@wisc.edu",
-            "imgURL": "images/victoriaZhang.jpg",
-            "isContact": true
+            "imgURL": "images/board-placeholder.svg",
+            "imgAlt": "Headshot coming soon"
         },
         {
-            "name": "Ansh Kasturu",
+            "name": "Christian",
+            "title": "VP of Engineering",
+            "imgURL": "images/christian.jpg"
+        },
+        {
+            "name": "Soham",
+            "title": "VP of Engineering",
+            "imgURL": "images/board-placeholder.svg",
+            "imgAlt": "Headshot coming soon"
+        },
+        {
+            "name": "Charvik",
+            "title": "VP of Engineering",
+            "imgURL": "images/charvik.png"
+        },
+        {
+            "name": "Hera",
             "title": "VP of Finance",
-            "email": "",
-            "imgURL": "images/anshKasturi.jpg",
-            "isContact": false
+            "imgURL": "images/hera.png"
         },
         {
-            "name": "Aidan Seeberg",
-            "title": "VP of Internal Com.",
-            "email": "",
-            "imgURL": "images/aidanSeeberg.jfif",
-            "isContact": false
+            "name": "Connor",
+            "title": "VP of Internal Communications",
+            "imgURL": "images/connor.jpg"
         },
         {
-            "name": "Raihan Tanvir",
-            "title": "VP of External Com.",
-            "email": "rtanvir@wisc.edu",
-            "imgURL": "images/raihanTanvir.png",
-            "isContact": true
-        },
-        {
-            "name": "Anthony Segedi",
-            "title": "VP of Engineering",
-            "email": "segedi@wisc.edu",
-            "imgURL": "images/anthonySegedi.jpg",
-            "isContact": false
-        },
-        {
-            "name": "Jhanvi Sanhga",
-            "title": "VP of Engineering",
-            "email": "",
-            "imgURL": "images/jhanviSangha.jpg",
-            "isContact": false
+            "name": "Sana",
+            "title": "VP of External Communications",
+            "imgURL": "images/sana.png"
         }
     ],
-    "semester": "Spring 2022",
+    "semester": "Fall 2026",
     "discordLink": "https://discord.gg/kGssWKMjya",
     "projectLink": "https://github.com/SDC-Fall-2026/",
     "linkedInLink": "https://www.linkedin.com/in/wisconsin-software-development-club/",
-    "isShowCriticalInfo": false,
-    "criticalInfo": "This is critical info you should know about!"
+    "meeting": null,
+    "announcement": null
 }

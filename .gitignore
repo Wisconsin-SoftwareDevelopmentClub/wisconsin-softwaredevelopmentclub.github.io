@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+
+# Local Codex instructions, settings, and artifacts
+.codex*
+.agents/
+AGENTS.md
+AGENTS.override.md
+codex*.log
+codex*.jsonl
