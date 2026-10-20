@@ -31,6 +31,12 @@ def https_url(value, label):
 
 
 def render_regions(config, filename, current_page):
+    for field in ("semester", "announcement", "meeting"):
+        value = config.get(field)
+        if value is not None and not isinstance(value, str):
+            raise ValueError(f"{field} must be text or null")
+    if not isinstance(config.get("board", []), list):
+        raise ValueError("board must be an array")
     discord = https_url(config["discordLink"], "discordLink")
     github = https_url(config["projectLink"], "projectLink")
     linkedin = https_url(config["linkedInLink"], "linkedInLink")
@@ -88,6 +94,8 @@ def render_regions(config, filename, current_page):
     if board:
         bios = []
         for member in board:
+            if not isinstance(member, dict):
+                raise ValueError("Each board entry must be an object with name and title")
             name = text(member["name"])
             title = text(member["title"])
             image = ""
@@ -134,6 +142,13 @@ def render_regions(config, filename, current_page):
 
 def sync_page(source, regions):
     pattern = r"<!-- config:([\w-]+) -->.*?<!-- /config:\1 -->"
+    for name in ("metadata", "header", "announcement", "footer"):
+        if len(re.findall(rf"<!-- config:{name} -->.*?<!-- /config:{name} -->", source, flags=re.DOTALL)) != 1:
+            raise ValueError(f"Expected exactly one complete {name} config region")
+    openings = re.findall(r"<!-- config:([\w-]+) -->", source)
+    complete = re.findall(pattern, source, flags=re.DOTALL)
+    if openings != complete:
+        raise ValueError("A config region is missing its matching closing marker")
 
     def replace(match):
         name = match.group(1)
