@@ -8,9 +8,8 @@
 .mission-copy .text-link { margin-top: 1.5rem; }
 .board-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2.5rem; }
 .board-card { border-top: 1px solid var(--line); padding-top: 1.5rem; overflow-wrap: anywhere; }
-.board-card img { width: 100%; aspect-ratio: 1; object-fit: cover; object-position: center top; margin-bottom: 1.5rem; }
-/* Display the supplied sideways photo upright without changing the original. */
-.board-card img[src="images/sana.png"] { transform: rotate(90deg); object-position: center; }
+.board-card img { width: 100%; aspect-ratio: 1; object-fit: cover; object-position: center; margin-bottom: 1.5rem; }
+.board-card img[src="images/christian.jpg"] { object-position: center top; }
 .board-card img[src="images/hera.png"] { object-position: center bottom; }
 .board-card h3 { margin-bottom: .5rem; }
 .board-card p { color: var(--muted); }

@@ -4,8 +4,7 @@
         {
             "name": "Marc",
             "title": "President",
-            "imgURL": "images/board-placeholder.svg",
-            "imgAlt": "Headshot coming soon"
+            "imgURL": "images/marc.jpg"
         },
         {
             "name": "Christian",
@@ -15,8 +14,7 @@
         {
             "name": "Soham",
             "title": "VP of Engineering",
-            "imgURL": "images/board-placeholder.svg",
-            "imgAlt": "Headshot coming soon"
+            "imgURL": "images/soham.png"
         },
         {
             "name": "Charvik",
@@ -36,7 +34,7 @@
         {
             "name": "Sana",
             "title": "VP of External Communications",
-            "imgURL": "images/sana.png"
+            "imgURL": "images/sana.jpg"
         }
     ],
     "semester": "Fall 2026",
