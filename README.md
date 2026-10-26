@@ -37,6 +37,12 @@ Commit the configuration or template changes **and the updated HTML together**. 
 
 Before publishing, preview all three pages at mobile and desktop widths. Check keyboard navigation, image loading, and external links. GitHub Actions runs the static checks and tests on pushes and pull requests; external links require manual checking.
 
+## Club naming
+
+Use **Wisconsin Software Development Club**, **Wisconsin SDC**, or **Software Development Club**. Do not put **UW**, **UW-Madison**, or **University of Wisconsin–Madison** before the club name or abbreviation in page titles, headings, branding, descriptions, or accessibility text.
+
+University references can follow the club name, as in “Software Development Club at UW–Madison.” The site checks enforce the prefix rule in page text, metadata, image descriptions, and accessible labels, including names split across inline HTML tags.
+
 ## Publishing
 
 Keep GitHub Pages configured to serve the repository root. If the public URL changes, update `siteUrl` and regenerate the HTML before publishing. The checks workflow validates changes; it does not deploy the site.
