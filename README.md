@@ -23,7 +23,7 @@ Edit `config.json` for the semester, community links, meeting details, announcem
 
 Edit page copy in `index.html` (Home), `project.html` (Projects), and `info.html` (About). Regions between `<!-- config:NAME -->` and `<!-- /config:NAME -->` are generated; change their content in `config.json` or their templates in `scripts/update_site.py`.
 
-Shared styles are in `css/style.css`; page styles are in the matching CSS files. When replacing `images/sana.png`, check its rotation rule in `css/info.css`.
+Shared styles are in `css/style.css`; page styles are in the matching CSS files. Board photos use centered square crops; check their framing in `css/info.css` when replacing them.
 
 After changing configuration or templates, regenerate the HTML and run the checks:
 
